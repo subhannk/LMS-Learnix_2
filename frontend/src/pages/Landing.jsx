@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const courses = [
-  { icon: '💻', title: 'Full Stack Web Dev', students: '12,400', level: 'Beginner', color: '#6c47ff' },
-  { icon: '🤖', title: 'AI & Machine Learning', students: '8,900', level: 'Intermediate', color: '#ff6b6b' },
-  { icon: '📱', title: 'Mobile App Dev', students: '7,200', level: 'Beginner', color: '#00d2ff' },
-  { icon: '🔒', title: 'Cybersecurity', students: '9,100', level: 'Advanced', color: '#ff9500' },
-  { icon: '☁️', title: 'Cloud & DevOps', students: '6,800', level: 'Intermediate', color: '#00c851' },
-  { icon: '🎨', title: 'UI/UX Design', students: '5,400', level: 'Beginner', color: '#ff3cac' },
+  { icon: '💻', title: 'Full Stack Web Dev', students: '12,400', level: 'Beginner', color: '#7C9CF5' },
+  { icon: '🤖', title: 'AI & Machine Learning', students: '8,900', level: 'Intermediate', color: '#A5B8FF' },
+  { icon: '📱', title: 'Mobile App Dev', students: '7,200', level: 'Beginner', color: '#8EC5FC' },
+  { icon: '🔒', title: 'Cybersecurity', students: '9,100', level: 'Advanced', color: '#A5B8FF' },
+  { icon: '☁️', title: 'Cloud & DevOps', students: '6,800', level: 'Intermediate', color: '#7C9CF5' },
+  { icon: '🎨', title: 'UI/UX Design', students: '5,400', level: 'Beginner', color: '#8EC5FC' },
 ]
 
 const stats = [
@@ -18,8 +18,8 @@ const stats = [
 ]
 
 const testimonials = [
-  { name: 'Arjun Menon', role: 'Software Engineer @ Google', text: 'CyberSquare transformed my career. The mentorship and hands-on projects gave me the confidence to crack top tech interviews.', avatar: '👨‍💻' },
-  { name: 'Priya Nair', role: 'UI Designer @ Swiggy', text: "From zero design knowledge to landing a dream job — CyberSquare's UI/UX course is absolutely world-class.", avatar: '👩‍🎨' },
+  { name: 'Arjun Menon', role: 'Software Engineer @ Google', text: 'Learnix transformed my career. The mentorship and hands-on projects gave me the confidence to crack top tech interviews.', avatar: '👨‍💻' },
+  { name: 'Priya Nair', role: 'UI Designer @ Swiggy', text: "From zero design knowledge to landing a dream job — Learnix's UI/UX course is absolutely world-class.", avatar: '👩‍🎨' },
   { name: 'Rahul Dev', role: 'ML Engineer @ Amazon', text: 'The AI course content is incredibly up-to-date. I got placed within 2 months of completing my certification.', avatar: '🧑‍🔬' },
 ]
 
@@ -65,52 +65,70 @@ const Landing = () => {
   }, [])
 
   return (
-    <div style={{ background: '#07070f', color: '#fff', fontFamily: "'DM Sans',sans-serif", overflowX: 'hidden' }}>
+    <div style={{ background: '#F7F9FC', color: '#1E293B', fontFamily: "'DM Sans',sans-serif", overflowX: 'hidden' }}>
 
       {/* NAVBAR */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         padding: '14px 40px',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        background: scrollY > 50 ? 'rgba(7,7,15,0.97)' : 'transparent',
+        background: scrollY > 50 ? 'rgba(255, 255, 255, 0.85)' : 'transparent',
         backdropFilter: scrollY > 50 ? 'blur(20px)' : 'none',
-        borderBottom: scrollY > 50 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+        borderBottom: scrollY > 50 ? '1px solid rgba(226, 232, 240, 0.8)' : 'none',
+        boxShadow: scrollY > 50 ? '0 4px 30px rgba(0, 0, 0, 0.02)' : 'none',
         transition: 'all 0.3s ease'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18 }}>C</div>
-          <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: '#fff' }}>
-            Cyber<span style={{ color: '#6c47ff' }}>Square</span>
+          <div style={{ 
+            width: 36, 
+            height: 36, 
+            borderRadius: 10, 
+            background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            fontWeight: 900, 
+            fontSize: 18, 
+            color: '#fff',
+            boxShadow: '0 4px 12px rgba(124, 156, 245, 0.3)'
+          }}>L</div>
+          <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: '#1E293B' }}>
+            Learn<span style={{ color: '#6D8EF7' }}>ix</span>
           </span>
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          {/* <Link to="/courses" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', padding: '8px 16px', fontSize: 14, transition: 'color 0.2s' }}
-            onMouseEnter={e => e.target.style.color = '#fff'}
-            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.6)'}>
-            Courses
-          </Link> */}
-          <Link to="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', padding: '8px 16px', fontSize: 14, transition: 'color 0.2s' }}
-            onMouseEnter={e => e.target.style.color = '#fff'}
-            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.6)'}>
+          <Link to="/login" style={{ color: '#64748B', textDecoration: 'none', padding: '8px 16px', fontSize: 14, fontWeight: 600, transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color = '#1E293B'}
+            onMouseLeave={e => e.target.style.color = '#64748B'}>
             Sign In
           </Link>
-          {/* <Link to="/register" style={{ background: 'linear-gradient(135deg,#6c47ff,#9c47ff)', color: '#fff', textDecoration: 'none', padding: '10px 22px', borderRadius: 12, fontSize: 14, fontWeight: 600, boxShadow: '0 0 30px rgba(108,71,255,0.4)', transition: 'opacity 0.2s' }}
-            onMouseEnter={e => e.target.style.opacity = '0.85'}
+          <Link to="/register" style={{ 
+            background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', 
+            color: '#fff', 
+            textDecoration: 'none', 
+            padding: '10px 22px', 
+            borderRadius: 12, 
+            fontSize: 14, 
+            fontWeight: 600, 
+            boxShadow: '0 4px 14px rgba(124, 156, 245, 0.35)', 
+            transition: 'opacity 0.2s' 
+          }}
+            onMouseEnter={e => e.target.style.opacity = '0.9'}
             onMouseLeave={e => e.target.style.opacity = '1'}>
             Get Started Free →
-          </Link> */}
+          </Link>
         </div>
       </nav>
 
       {/* HERO */}
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '120px 24px 80px', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-          <div style={{ position: 'absolute', top: '10%', left: '5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,rgba(108,71,255,0.15) 0%,transparent 70%)', animation: 'float1 6s ease-in-out infinite' }} />
-          <div style={{ position: 'absolute', bottom: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(255,107,107,0.12) 0%,transparent 70%)', animation: 'float2 8s ease-in-out infinite' }} />
-          <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.03 }}>
+          <div style={{ position: 'absolute', top: '10%', left: '5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,rgba(124,156,245,0.15) 0%,transparent 70%)', animation: 'float1 6s ease-in-out infinite' }} />
+          <div style={{ position: 'absolute', bottom: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(165,184,255,0.12) 0%,transparent 70%)', animation: 'float2 8s ease-in-out infinite' }} />
+          <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.2 }}>
             <defs>
               <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#E2E8F0" strokeWidth="1" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -118,55 +136,64 @@ const Landing = () => {
         </div>
 
         <div style={{ position: 'relative', maxWidth: 900 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(108,71,255,0.12)', border: '1px solid rgba(108,71,255,0.3)', borderRadius: 100, padding: '8px 18px', marginBottom: 28, fontSize: 13, color: '#a78bff' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#00c851', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            Kerala's #1 Tech Training Institute
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(109,142,247,0.08)', border: '1px solid rgba(109,142,247,0.2)', borderRadius: 100, padding: '8px 18px', marginBottom: 28, fontSize: 13, color: '#6D8EF7', fontWeight: 600 }}>
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981', display: 'inline-block', animation: 'pulse 2s infinite' }} />
+            Premium Global Student Workspace
           </div>
 
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(44px,8vw,90px)', lineHeight: 1.0, marginBottom: 24, letterSpacing: '-2px' }}>
+          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(44px,8vw,80px)', lineHeight: 1.05, marginBottom: 24, letterSpacing: '-2px', color: '#1E293B' }}>
             Build Your Future<br />
-            <span style={{ background: 'linear-gradient(135deg,#6c47ff 0%,#ff6b6b 50%,#00d2ff 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% auto', animation: 'shimmer 4s linear infinite' }}>
-              in Tech.
+            <span style={{ background: 'linear-gradient(135deg,#7C9CF5 0%,#A5B8FF 50%,#8EC5FC 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% auto', animation: 'shimmer 4s linear infinite' }}>
+              in Tech & Design.
             </span>
           </h1>
 
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 'clamp(15px,2vw,20px)', maxWidth: 640, margin: '0 auto 40px', lineHeight: 1.7 }}>
-            Industry-leading courses in Web Development, AI, Cybersecurity & more. Join 50,000+ students who chose CyberSquare.
+          <p style={{ color: '#64748B', fontSize: 'clamp(16px,2vw,20px)', maxWidth: 640, margin: '0 auto 40px', lineHeight: 1.7, fontWeight: 500 }}>
+            Industry-leading courses in Web Development, AI, Cybersecurity & more. Join 50,000+ students globally who chose Learnix.
           </p>
 
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 60 }}>
-            <Link to="/register" style={{ background: 'linear-gradient(135deg,#6c47ff,#9c47ff)', color: '#fff', textDecoration: 'none', padding: '16px 36px', borderRadius: 16, fontWeight: 700, fontSize: 16, boxShadow: '0 0 50px rgba(108,71,255,0.4)', transition: 'all 0.3s' }}>
+            <Link to="/register" style={{ 
+              background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', 
+              color: '#fff', 
+              textDecoration: 'none', 
+              padding: '16px 36px', 
+              borderRadius: 16, 
+              fontWeight: 700, 
+              fontSize: 16, 
+              boxShadow: '0 8px 24px rgba(124, 156, 245, 0.3)', 
+              transition: 'all 0.3s' 
+            }}
+              onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 30px rgba(124, 156, 245, 0.45)' }}
+              onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 8px 24px rgba(124, 156, 245, 0.3)' }}>
               Start Learning Free →
             </Link>
-            {/* <Link to="/courses" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', textDecoration: 'none', padding: '16px 36px', borderRadius: 16, fontWeight: 600, fontSize: 16, backdropFilter: 'blur(10px)' }}>
-              Browse Courses
-            </Link> */}
           </div>
 
           {/* Social proof */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
             <div style={{ display: 'flex' }}>
               {['👨‍💻', '👩‍💻', '🧑‍💻', '👨‍🎓', '👩‍🎓'].map((e, i) => (
-                <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', background: `hsl(${i * 60 + 240},70%,50%)`, border: '2px solid #07070f', marginLeft: i > 0 ? -10 : 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>{e}</div>
+                <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', background: `hsl(${i * 45 + 200},70%,80%)`, border: '2px solid #FFFFFF', marginLeft: i > 0 ? -10 : 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>{e}</div>
               ))}
             </div>
             <div style={{ textAlign: 'left' }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>50,000+ students</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>⭐⭐⭐⭐⭐ 4.9 rating</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#1E293B' }}>50,000+ students</div>
+              <div style={{ fontSize: 12, color: '#64748B', fontWeight: 500 }}>⭐⭐⭐⭐⭐ 4.9 overall rating</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* STATS */}
-      <section style={{ padding: '60px 24px', background: 'rgba(108,71,255,0.04)', borderTop: '1px solid rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+      <section style={{ padding: '60px 24px', background: 'rgba(124,156,245,0.05)', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 32, textAlign: 'center' }}>
           {stats.map((s, i) => (
             <div key={i}>
-              <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(30px,5vw,52px)', background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1.1 }}>
+              <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(30px,5vw,46px)', background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1.1 }}>
                 <Counter target={s.value} suffix={s.suffix} />
               </div>
-              <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13, marginTop: 4 }}>{s.label}</div>
+              <div style={{ color: '#64748B', fontSize: 13, fontWeight: 600, marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -175,61 +202,81 @@ const Landing = () => {
       {/* COURSES */}
       <section style={{ padding: '100px 24px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <span style={{ color: '#6c47ff', fontSize: 12, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase' }}>What We Teach</span>
-          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(28px,5vw,52px)', marginTop: 8, letterSpacing: '-1px' }}>
-            World-Class <span style={{ color: '#6c47ff' }}>Courses</span>
+          <span style={{ color: '#6D8EF7', fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>What We Teach</span>
+          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(28px,5vw,46px)', marginTop: 8, letterSpacing: '-1.5px', color: '#1E293B' }}>
+            World-Class <span style={{ color: '#6D8EF7' }}>Learning Track</span>
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 18 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 20 }}>
           {courses.map((c, i) => (
-            <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 20, padding: 26, cursor: 'pointer', transition: 'all 0.3s', position: 'relative', overflow: 'hidden' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.borderColor = c.color + '50'; e.currentTarget.style.boxShadow = `0 20px 40px ${c.color}20` }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.boxShadow = 'none' }}
+            <div key={i} style={{ 
+              background: '#FFFFFF', 
+              border: '1px solid #E2E8F0', 
+              borderRadius: 20, 
+              padding: 26, 
+              cursor: 'pointer', 
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 
+              position: 'relative', 
+              overflow: 'hidden',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+            }}
+              onMouseEnter={e => { 
+                e.currentTarget.style.transform = 'translateY(-6px)'; 
+                e.currentTarget.style.borderColor = '#7C9CF5'; 
+                e.currentTarget.style.boxShadow = `0 20px 30px rgba(124,156,245,0.12)` 
+              }}
+              onMouseLeave={e => { 
+                e.currentTarget.style.transform = 'translateY(0)'; 
+                e.currentTarget.style.borderColor = '#E2E8F0'; 
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.02)' 
+              }}
             >
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg,${c.color},transparent)` }} />
-              <div style={{ fontSize: 40, marginBottom: 14 }}>{c.icon}</div>
-              <h3 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 19, marginBottom: 8, color: '#fff' }}>{c.title}</h3>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg,${c.color},#A5B8FF)` }} />
+              <div style={{ fontSize: 36, marginBottom: 14 }}>{c.icon}</div>
+              <h3 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 18, marginBottom: 8, color: '#1E293B' }}>{c.title}</h3>
               <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-                <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13 }}>👥 {c.students}</span>
-                <span style={{ background: c.color + '20', color: c.color, fontSize: 11, padding: '2px 10px', borderRadius: 100, fontWeight: 600 }}>{c.level}</span>
+                <span style={{ color: '#64748B', fontSize: 13, fontWeight: 500 }}>👥 {c.students}</span>
+                <span style={{ background: 'rgba(109,142,247,0.1)', color: '#6D8EF7', fontSize: 11, padding: '2px 10px', borderRadius: 100, fontWeight: 700 }}>{c.level}</span>
               </div>
             </div>
           ))}
         </div>
-
-        {/* <div style={{ textAlign: 'center', marginTop: 44 }}>
-          <Link to="/courses" style={{ background: 'linear-gradient(135deg,#6c47ff,#9c47ff)', color: '#fff', textDecoration: 'none', padding: '14px 36px', borderRadius: 14, fontWeight: 700, fontSize: 15, boxShadow: '0 0 40px rgba(108,71,255,0.35)', display: 'inline-block' }}>
-            Explore All Courses →
-          </Link>
-        </div> */}
       </section>
 
-      {/* WHY CYBERSQUARE */}
-      <section style={{ padding: '80px 24px', background: 'rgba(255,255,255,0.01)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+      {/* WHY LEARNIX */}
+      <section style={{ padding: '80px 24px', background: '#FFFFFF', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <span style={{ color: '#ff6b6b', fontSize: 12, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase' }}>Why Choose Us</span>
-            <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(28px,5vw,52px)', marginTop: 8, letterSpacing: '-1px' }}>
-              The CyberSquare <span style={{ color: '#ff6b6b' }}>Advantage</span>
+            <span style={{ color: '#6D8EF7', fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>Why Choose Us</span>
+            <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(28px,5vw,46px)', marginTop: 8, letterSpacing: '-1.5px', color: '#1E293B' }}>
+              The Learnix <span style={{ color: '#6D8EF7' }}>Advantage</span>
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20 }}>
             {[
-              { icon: '🏆', title: 'Industry Mentors', desc: 'Learn from engineers at Google, Amazon, Microsoft', color: '#ff9500' },
-              { icon: '💼', title: '100% Placement Support', desc: 'Dedicated placement cell with 500+ hiring partners', color: '#00c851' },
-              { icon: '🔬', title: 'Hands-on Projects', desc: 'Build real-world projects for your portfolio', color: '#00d2ff' },
-              { icon: '📜', title: 'Certified Curriculum', desc: 'AWS, Google, Microsoft aligned courses', color: '#6c47ff' },
-              { icon: '🤝', title: 'Lifetime Community', desc: 'Join 50,000+ alumni for networking and support', color: '#ff6b6b' },
-              { icon: '📱', title: 'Learn Anywhere', desc: 'HD videos on mobile, tablet and desktop 24/7', color: '#ff3cac' },
+              { icon: '🏆', title: 'Industry Mentors', desc: 'Learn from engineers at Google, Amazon, Microsoft', color: '#7C9CF5' },
+              { icon: '💼', title: '100% Placement Support', desc: 'Dedicated placement cell with 500+ hiring partners', color: '#8EC5FC' },
+              { icon: '🔬', title: 'Hands-on Projects', desc: 'Build real-world projects for your portfolio', color: '#A5B8FF' },
+              { icon: '📜', title: 'Certified Curriculum', desc: 'AWS, Google, Microsoft aligned courses', color: '#7C9CF5' },
+              { icon: '🤝', title: 'Lifetime Community', desc: 'Join 50,000+ alumni for networking and support', color: '#8EC5FC' },
+              { icon: '📱', title: 'Learn Anywhere', desc: 'HD videos on mobile, tablet and desktop 24/7', color: '#A5B8FF' },
             ].map((f, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: 18, padding: 22, transition: 'all 0.3s', cursor: 'default' }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = f.color + '40' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)' }}
+              <div key={i} style={{ 
+                background: '#F7F9FC', 
+                border: '1px solid #E2E8F0', 
+                borderRadius: 18, 
+                padding: 22, 
+                transition: 'all 0.3s', 
+                cursor: 'default',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.01)'
+              }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.borderColor = '#7C9CF5' }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#F7F9FC'; e.currentTarget.style.borderColor = '#E2E8F0' }}
               >
                 <div style={{ fontSize: 30, marginBottom: 12 }}>{f.icon}</div>
-                <h4 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 16, marginBottom: 7, color: f.color }}>{f.title}</h4>
-                <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13, lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
+                <h4 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 16, marginBottom: 7, color: '#1E293B' }}>{f.title}</h4>
+                <p style={{ color: '#64748B', fontSize: 13, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{f.desc}</p>
               </div>
             ))}
           </div>
@@ -238,21 +285,32 @@ const Landing = () => {
 
       {/* TESTIMONIALS */}
       <section style={{ padding: '80px 24px', maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-        <span style={{ color: '#00d2ff', fontSize: 12, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase' }}>Student Stories</span>
-        <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(24px,4vw,44px)', margin: '8px 0 40px', letterSpacing: '-1px' }}>
-          Life-Changing <span style={{ color: '#00d2ff' }}>Experiences</span>
+        <span style={{ color: '#6D8EF7', fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>Student Stories</span>
+        <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(24px,4vw,40px)', margin: '8px 0 40px', letterSpacing: '-1px', color: '#1E293B' }}>
+          Life-Changing <span style={{ color: '#6D8EF7' }}>Experiences</span>
         </h2>
 
         <div style={{ position: 'relative', minHeight: 220 }}>
           {testimonials.map((t, i) => (
-            <div key={i} style={{ position: 'absolute', top: 0, left: 0, right: 0, opacity: activeTest === i ? 1 : 0, transform: activeTest === i ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease', pointerEvents: activeTest === i ? 'auto' : 'none', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 22, padding: '32px 36px' }}>
-              <div style={{ fontSize: 44, marginBottom: 14, opacity: 0.3, color: '#6c47ff' }}>"</div>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 17, lineHeight: 1.8, marginBottom: 22, fontStyle: 'italic' }}>{t.text}</p>
+            <div key={i} style={{ 
+              position: 'absolute', top: 0, left: 0, right: 0, 
+              opacity: activeTest === i ? 1 : 0, 
+              transform: activeTest === i ? 'translateY(0)' : 'translateY(20px)', 
+              transition: 'all 0.6s ease', 
+              pointerEvents: activeTest === i ? 'auto' : 'none', 
+              background: '#FFFFFF', 
+              border: '1px solid #E2E8F0', 
+              borderRadius: 22, 
+              padding: '32px 36px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.02)'
+            }}>
+              <div style={{ fontSize: 44, marginBottom: 14, opacity: 0.15, color: '#6D8EF7', lineHeight: 1, fontFamily: 'serif' }}>“</div>
+              <p style={{ color: '#475569', fontSize: 16, lineHeight: 1.8, marginBottom: 22, fontStyle: 'italic', fontWeight: 500 }}>{t.text}</p>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
-                <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>{t.avatar}</div>
+                <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>{t.avatar}</div>
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: '#fff' }}>{t.name}</div>
-                  <div style={{ color: '#6c47ff', fontSize: 12 }}>{t.role}</div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: '#1E293B' }}>{t.name}</div>
+                  <div style={{ color: '#6D8EF7', fontSize: 12, fontWeight: 600 }}>{t.role}</div>
                 </div>
               </div>
             </div>
@@ -261,36 +319,60 @@ const Landing = () => {
 
         <div style={{ marginTop: 240, display: 'flex', justifyContent: 'center', gap: 8 }}>
           {testimonials.map((_, i) => (
-            <button key={i} onClick={() => setActiveTest(i)} style={{ width: activeTest === i ? 24 : 8, height: 8, borderRadius: 100, background: activeTest === i ? '#6c47ff' : 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer', transition: 'all 0.3s', padding: 0 }} />
+            <button key={i} onClick={() => setActiveTest(i)} style={{ width: activeTest === i ? 24 : 8, height: 8, borderRadius: 100, background: activeTest === i ? '#6D8EF7' : '#E2E8F0', border: 'none', cursor: 'pointer', transition: 'all 0.3s', padding: 0 }} />
           ))}
         </div>
       </section>
 
       {/* CTA */}
       <section style={{ padding: '80px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center,rgba(108,71,255,0.15) 0%,transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center,rgba(124,156,245,0.1) 0%,transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', maxWidth: 660, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(32px,6vw,68px)', lineHeight: 1.1, marginBottom: 18, letterSpacing: '-2px' }}>
-            Your Tech Career<br />Starts <span style={{ background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Today.</span>
+          <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(32px,6vw,60px)', lineHeight: 1.1, marginBottom: 18, letterSpacing: '-1.5px', color: '#1E293B' }}>
+            Your Tech Career<br />Starts <span style={{ background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Today.</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 17, marginBottom: 36 }}>
-            Join 50,000+ students building their dream careers with CyberSquare.
+          <p style={{ color: '#64748B', fontSize: 16, marginBottom: 36, fontWeight: 500 }}>
+            Join 50,000+ students building their dream careers with Learnix.
           </p>
-          <Link to="/register" style={{ background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', color: '#fff', textDecoration: 'none', padding: '18px 48px', borderRadius: 18, fontWeight: 800, fontSize: 18, display: 'inline-block', boxShadow: '0 0 60px rgba(108,71,255,0.5)', transition: 'all 0.3s' }}>
+          <Link to="/register" style={{ 
+            background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', 
+            color: '#fff', 
+            textDecoration: 'none', 
+            padding: '18px 48px', 
+            borderRadius: 18, 
+            fontWeight: 800, 
+            fontSize: 18, 
+            display: 'inline-block', 
+            boxShadow: '0 8px 24px rgba(124, 156, 245, 0.3)', 
+            transition: 'all 0.3s' 
+          }}
+            onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 30px rgba(124, 156, 245, 0.45)' }}
+            onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 8px 24px rgba(124, 156, 245, 0.3)' }}>
             Enroll Now — It's Free →
           </Link>
-          <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: 12, marginTop: 14 }}>No credit card required · Cancel anytime</p>
+          <p style={{ color: '#94A3B8', fontSize: 12, marginTop: 14, fontWeight: 500 }}>No credit card required · Access instantly</p>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer style={{ padding: '40px 24px 28px', borderTop: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
+      <footer style={{ padding: '40px 24px 28px', borderTop: '1px solid #E2E8F0', background: '#FFFFFF', textAlign: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 14 }}>
-          <div style={{ width: 30, height: 30, borderRadius: 8, background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 15 }}>C</div>
-          <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17, color: '#fff' }}>CyberSquare</span>
+          <div style={{ 
+            width: 30, 
+            height: 30, 
+            borderRadius: 8, 
+            background: 'linear-gradient(135deg,#7C9CF5,#A5B8FF)', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            fontWeight: 900, 
+            fontSize: 15,
+            color: '#fff'
+          }}>L</div>
+          <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17, color: '#1E293B' }}>Learnix</span>
         </div>
-        <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: 13 }}>Kerala's Leading Tech Training Institute · Calicut, Kerala, India</p>
-        <p style={{ color: 'rgba(255,255,255,0.15)', fontSize: 12, marginTop: 6 }}>© 2026 CyberSquare. All rights reserved.</p>
+        <p style={{ color: '#64748B', fontSize: 13, fontWeight: 500 }}>Global Student Workspace · Interactive Educational Platform</p>
+        <p style={{ color: '#94A3B8', fontSize: 12, marginTop: 6, fontWeight: 500 }}>© 2026 Learnix. All rights reserved.</p>
       </footer>
 
       <style>{`
@@ -301,9 +383,6 @@ const Landing = () => {
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #07070f; }
-        ::-webkit-scrollbar-thumb { background: #6c47ff; border-radius: 10px; }
       `}</style>
     </div>
   )

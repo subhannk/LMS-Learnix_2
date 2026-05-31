@@ -201,18 +201,62 @@ const CourseList = () => {
   })
 
   return (
-    <div style={{ background: '#07070f', minHeight: '100vh', color: '#fff', fontFamily: "'DM Sans',sans-serif" }}>
+    <div style={{ background: 'var(--bg-color, #F7F9FC)', minHeight: '100vh', color: 'var(--text-primary, #1E293B)', fontFamily: "'DM Sans',sans-serif" }}>
 
       {/* Visitor Navbar */}
       {!user && (
-        <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 32px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'sticky', top: 0, zIndex: 50, background: 'rgba(7,7,15,0.97)', backdropFilter: 'blur(20px)' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', color: '#fff' }}>
-            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 16 }}>C</div>
-            <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 18 }}>Cyber<span style={{ color: '#6c47ff' }}>Square</span></span>
+        <nav style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          padding: '14px 32px', 
+          borderBottom: '1px solid var(--border-color, #E2E8F0)', 
+          position: 'sticky', 
+          top: 0, 
+          zIndex: 50, 
+          background: 'rgba(255, 255, 255, 0.8)', 
+          backdropFilter: 'blur(20px)',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.02)'
+        }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', color: 'var(--text-primary, #1E293B)' }}>
+            <div style={{ 
+              width: 32, 
+              height: 32, 
+              borderRadius: 8, 
+              background: 'linear-gradient(135deg, #7C9CF5, #A5B8FF)', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              fontWeight: 900, 
+              fontSize: 16,
+              color: '#fff',
+              boxShadow: '0 4px 12px rgba(124, 156, 245, 0.3)'
+            }}>L</div>
+            <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 18 }}>
+              Learn<span style={{ color: '#6D8EF7' }}>ix</span>
+            </span>
           </Link>
           <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <Link to="/login" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', padding: '8px 18px', fontSize: 14, borderRadius: 10, border: '1px solid rgba(255,255,255,0.1)' }}>Sign In</Link>
-            <Link to="/register" style={{ background: 'linear-gradient(135deg,#6c47ff,#9c47ff)', color: '#fff', textDecoration: 'none', padding: '8px 18px', fontSize: 14, borderRadius: 10, fontWeight: 600 }}>Get Started Free</Link>
+            <Link to="/login" style={{ color: 'var(--text-secondary, #64748B)', textDecoration: 'none', padding: '8px 18px', fontSize: 14, borderRadius: 10, border: '1px solid var(--border-color, #E2E8F0)', background: 'transparent', transition: 'all 0.2s' }}
+              onMouseEnter={e => { e.target.style.background = 'rgba(109,142,247,0.06)'; e.target.style.color = '#1E293B' }}
+              onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--text-secondary, #64748B)' }}>
+              Sign In
+            </Link>
+            <Link to="/register" style={{ 
+              background: 'linear-gradient(135deg, #7C9CF5, #A5B8FF)', 
+              color: '#fff', 
+              textDecoration: 'none', 
+              padding: '8px 18px', 
+              fontSize: 14, 
+              borderRadius: 10, 
+              fontWeight: 600,
+              boxShadow: '0 4px 12px rgba(124, 156, 245, 0.25)',
+              transition: 'all 0.2s'
+            }}
+              onMouseEnter={e => { e.target.style.opacity = '0.9'; e.target.style.transform = 'translateY(-1px)' }}
+              onMouseLeave={e => { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)' }}>
+              Get Started Free
+            </Link>
           </div>
         </nav>
       )}
@@ -220,25 +264,49 @@ const CourseList = () => {
       {/* Hero */}
       <div style={{ position: 'relative', textAlign: 'center', padding: '60px 24px 36px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-          <div style={{ position: 'absolute', top: 0, left: '20%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(108,71,255,0.12) 0%,transparent 70%)' }} />
-          <div style={{ position: 'absolute', top: 0, right: '20%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle,rgba(255,107,107,0.08) 0%,transparent 70%)' }} />
+          <div style={{ position: 'absolute', top: 0, left: '20%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(124, 156, 245, 0.12) 0%, transparent 70%)' }} />
+          <div style={{ position: 'absolute', top: 0, right: '20%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(165, 184, 255, 0.08) 0%, transparent 70%)' }} />
         </div>
         <div style={{ position: 'relative' }}>
-          <span style={{ display: 'inline-block', background: 'rgba(108,71,255,0.15)', border: '1px solid rgba(108,71,255,0.3)', borderRadius: 100, padding: '6px 16px', fontSize: 12, color: '#a78bff', fontWeight: 600, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 18 }}>
+          <span style={{ 
+            display: 'inline-block', 
+            background: 'rgba(109, 142, 247, 0.1)', 
+            border: '1px solid rgba(109, 142, 247, 0.2)', 
+            borderRadius: 100, 
+            padding: '6px 16px', 
+            fontSize: 12, 
+            color: '#6D8EF7', 
+            fontWeight: 600, 
+            letterSpacing: 1, 
+            textTransform: 'uppercase', 
+            marginBottom: 18 
+          }}>
             {courses.length}+ Expert Courses
           </span>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(32px,6vw,64px)', marginBottom: 14, letterSpacing: '-2px', lineHeight: 1.1 }}>
-            Explore Our <span style={{ background: 'linear-gradient(135deg,#6c47ff,#ff6b6b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Courses</span>
+          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 'clamp(32px,6vw,64px)', marginBottom: 14, letterSpacing: '-2px', lineHeight: 1.1, color: 'var(--text-primary, #1E293B)' }}>
+            Explore Our <span style={{ background: 'linear-gradient(135deg, #7C9CF5, #A5B8FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Courses</span>
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 16, marginBottom: 28 }}>
+          <p style={{ color: 'var(--text-secondary, #64748B)', fontSize: 16, marginBottom: 28 }}>
             {courses.length} world-class courses · All completely free to preview
           </p>
           <div style={{ position: 'relative', maxWidth: 500, margin: '0 auto' }}>
-            <span style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)', fontSize: 16 }}>🔍</span>
+            <span style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)', fontSize: 16, color: '#6D8EF7' }}>🔍</span>
             <input type="text" placeholder="Search courses or instructors..." value={search} onChange={e => setSearch(e.target.value)}
-              style={{ width: '100%', padding: '13px 20px 13px 44px', borderRadius: 16, fontSize: 14, outline: 'none', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', transition: 'border 0.2s', boxSizing: 'border-box' }}
-              onFocus={e => e.target.style.borderColor = 'rgba(108,71,255,0.6)'}
-              onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+              style={{ 
+                width: '100%', 
+                padding: '13px 20px 13px 44px', 
+                borderRadius: 16, 
+                fontSize: 14, 
+                outline: 'none', 
+                background: '#FFFFFF', 
+                border: '1px solid var(--border-color, #E2E8F0)', 
+                color: 'var(--text-primary, #1E293B)', 
+                transition: 'all 0.2s', 
+                boxSizing: 'border-box',
+                boxShadow: '0 4px 20px rgba(109, 142, 247, 0.04)'
+              }}
+              onFocus={e => { e.target.style.borderColor = '#7C9CF5'; e.target.style.boxShadow = '0 4px 20px rgba(109, 142, 247, 0.1)' }}
+              onBlur={e => { e.target.style.borderColor = 'var(--border-color, #E2E8F0)'; e.target.style.boxShadow = '0 4px 20px rgba(109, 142, 247, 0.04)' }} />
           </div>
         </div>
       </div>
@@ -247,11 +315,18 @@ const CourseList = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, padding: '0 24px 28px' }}>
         {categories.map(c => (
           <button key={c} onClick={() => setCategory(c)} style={{
-            padding: '7px 16px', borderRadius: 100, fontSize: 12, fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s', border: 'none',
-            background: category === c ? 'linear-gradient(135deg,#6c47ff,#9c47ff)' : 'rgba(255,255,255,0.05)',
-            color: category === c ? '#fff' : 'rgba(255,255,255,0.5)',
-            boxShadow: category === c ? '0 0 20px rgba(108,71,255,0.4)' : 'none',
-            transform: category === c ? 'scale(1.05)' : 'scale(1)'
+            padding: '8px 18px', 
+            borderRadius: 100, 
+            fontSize: 12, 
+            fontWeight: 500, 
+            cursor: 'pointer', 
+            transition: 'all 0.25s', 
+            border: 'none',
+            background: category === c ? 'linear-gradient(135deg, #7C9CF5, #A5B8FF)' : '#FFFFFF',
+            color: category === c ? '#fff' : 'var(--text-secondary, #64748B)',
+            boxShadow: category === c ? '0 8px 20px rgba(124, 156, 245, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.02)',
+            transform: category === c ? 'scale(1.05)' : 'scale(1)',
+            border: category === c ? 'none' : '1px solid var(--border-color, #E2E8F0)'
           }}>
             {c}
           </button>
@@ -260,51 +335,79 @@ const CourseList = () => {
 
       {/* Course Grid */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px 60px' }}>
-        <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 13, marginBottom: 20 }}>{filtered.length} courses found</p>
+        <p style={{ color: 'var(--text-secondary, #64748B)', fontSize: 13, marginBottom: 20 }}>{filtered.length} courses found</p>
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 0' }}>
             <div style={{ fontSize: 64, marginBottom: 14 }}>🔍</div>
-            <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 20 }}>No courses found</p>
+            <p style={{ color: 'var(--text-secondary, #64748B)', fontSize: 20 }}>No courses found</p>
           </div>
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: 18 }}>
             {filtered.map((course, i) => (
               <Link to={`/courses/${course._id}`} state={{ course }} key={course._id} style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#13131a', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 18, overflow: 'hidden', transition: 'all 0.3s', cursor: 'pointer', height: '100%', animation: `fadeUp 0.5s ease ${(i % 8) * 0.06}s both` }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-7px)'; e.currentTarget.style.borderColor = course.color + '60'; e.currentTarget.style.boxShadow = `0 20px 50px ${course.color}25` }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.boxShadow = 'none' }}
+                <div style={{ 
+                  background: '#FFFFFF', 
+                  border: '1px solid var(--border-color, #E2E8F0)', 
+                  borderRadius: 18, 
+                  overflow: 'hidden', 
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 
+                  cursor: 'pointer', 
+                  height: '100%', 
+                  animation: `fadeUp 0.5s ease ${(i % 8) * 0.06}s both`,
+                  boxShadow: '0 10px 30px rgba(109, 142, 247, 0.03)'
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-7px)'; e.currentTarget.style.borderColor = '#7C9CF5'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(124, 156, 245, 0.15)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'var(--border-color, #E2E8F0)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(109, 142, 247, 0.03)' }}
                 >
                   <div style={{ position: 'relative', height: 170, overflow: 'hidden' }}>
                     <img src={course.thumbnail} alt={course.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
                       onMouseEnter={e => e.target.style.transform = 'scale(1.08)'}
                       onMouseLeave={e => e.target.style.transform = 'scale(1)'} />
-                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top,#13131a 0%,transparent 50%)` }} />
+                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, rgba(255,255,255,0.4) 0%, transparent 50%)` }} />
                     <div style={{ position: 'absolute', top: 10, left: 10 }}>
-                      <span style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(10px)', border: `1px solid ${course.color}50`, color: course.color, fontSize: 10, padding: '3px 9px', borderRadius: 100, fontWeight: 600 }}>{course.category}</span>
+                      <span style={{ 
+                        background: 'rgba(255,255,255,0.9)', 
+                        backdropFilter: 'blur(10px)', 
+                        border: `1px solid ${course.color}30`, 
+                        color: course.color, 
+                        fontSize: 10, 
+                        padding: '3px 9px', 
+                        borderRadius: 100, 
+                        fontWeight: 600,
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                      }}>{course.category}</span>
                     </div>
                     <div style={{ position: 'absolute', top: 10, right: 10 }}>
-                      <span style={{ background: 'rgba(0,200,81,0.2)', border: '1px solid rgba(0,200,81,0.4)', color: '#00c851', fontSize: 10, padding: '3px 9px', borderRadius: 100, fontWeight: 700 }}>FREE</span>
+                      <span style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', fontSize: 10, padding: '3px 9px', borderRadius: 100, fontWeight: 700 }}>FREE</span>
                     </div>
                   </div>
-                  <div style={{ padding: '14px 16px 18px' }}>
-                    <h3 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 15, margin: '0 0 5px', color: '#fff', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  <div style={{ padding: '16px 18px 20px' }}>
+                    <h3 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 16, margin: '0 0 6px', color: 'var(--text-primary, #1E293B)', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {course.title}
                     </h3>
-                    <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, margin: '0 0 10px' }}>by {course.instructor.name}</p>
-                    <div style={{ display: 'flex', gap: 10, fontSize: 11, color: 'rgba(255,255,255,0.35)', marginBottom: 10 }}>
-                      <span>⭐ {course.averageRating}</span>
-                      <span>🎬 {course.lessons} lessons</span>
-                      <span>⏱ {course.duration}</span>
+                    <p style={{ color: 'var(--text-secondary, #64748B)', fontSize: 12, margin: '0 0 12px' }}>by {course.instructor.name}</p>
+                    <div style={{ display: 'flex', gap: 10, fontSize: 11, color: 'var(--text-secondary, #64748B)', marginBottom: 12 }}>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}>⭐ {course.averageRating}</span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}>🎬 {course.lessons} lessons</span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}>⏱ {course.duration}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: 11, padding: '3px 9px', borderRadius: 100, fontWeight: 600, textTransform: 'capitalize', background: course.level === 'beginner' ? 'rgba(0,200,81,0.12)' : course.level === 'intermediate' ? 'rgba(255,149,0,0.12)' : 'rgba(255,59,59,0.12)', color: course.level === 'beginner' ? '#00c851' : course.level === 'intermediate' ? '#ff9500' : '#ff3b3b' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-color, #E2E8F0)', paddingTop: 12 }}>
+                      <span style={{ 
+                        fontSize: 11, 
+                        padding: '3px 9px', 
+                        borderRadius: 100, 
+                        fontWeight: 600, 
+                        textTransform: 'capitalize', 
+                        background: course.level === 'beginner' ? 'rgba(16,185,129,0.1)' : course.level === 'intermediate' ? 'rgba(255,149,0,0.1)' : 'rgba(239,68,68,0.1)', 
+                        color: course.level === 'beginner' ? '#10B981' : course.level === 'intermediate' ? '#ff9500' : '#ff3b3b' 
+                      }}>
                         {course.level}
                       </span>
-                      <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11 }}>{course.totalStudents.toLocaleString()} students</span>
+                      <span style={{ color: 'var(--text-secondary, #64748B)', fontSize: 11 }}>{course.totalStudents.toLocaleString()} students</span>
                     </div>
                   </div>
-                  <div style={{ height: 3, background: `linear-gradient(90deg,${course.color},transparent)`, opacity: 0.6 }} />
+                  <div style={{ height: 4, background: `linear-gradient(90deg, #7C9CF5, #A5B8FF)` }} />
                 </div>
               </Link>
             ))}
@@ -313,14 +416,47 @@ const CourseList = () => {
 
         {/* CTA for visitors */}
         {!user && (
-          <div style={{ marginTop: 56, textAlign: 'center', background: 'linear-gradient(135deg,rgba(108,71,255,0.1),rgba(255,107,107,0.05))', border: '1px solid rgba(108,71,255,0.2)', borderRadius: 22, padding: '44px 28px' }}>
-            <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 32, marginBottom: 10 }}>Ready to Start Learning?</h2>
-            <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginBottom: 24 }}>Join 50,000+ students at CyberSquare. Create your free account today.</p>
+          <div style={{ 
+            marginTop: 56, 
+            textAlign: 'center', 
+            background: 'linear-gradient(135deg, rgba(124, 156, 245, 0.05), rgba(165, 184, 255, 0.05))', 
+            border: '1px solid var(--border-color, #E2E8F0)', 
+            borderRadius: 22, 
+            padding: '48px 32px',
+            boxShadow: '0 10px 40px rgba(124, 156, 245, 0.02)'
+          }}>
+            <h2 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 32, marginBottom: 12, color: 'var(--text-primary, #1E293B)', letterSpacing: '-0.5px' }}>Ready to Start Learning?</h2>
+            <p style={{ color: 'var(--text-secondary, #64748B)', fontSize: 15, marginBottom: 28, maxWidth: 500, margin: '0 auto 28px' }}>Join 50,000+ students at Learnix. Create your free account today.</p>
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/register" style={{ background: 'linear-gradient(135deg,#6c47ff,#9c47ff)', color: '#fff', textDecoration: 'none', padding: '13px 32px', borderRadius: 13, fontWeight: 700, fontSize: 15, boxShadow: '0 0 40px rgba(108,71,255,0.4)' }}>
+              <Link to="/register" style={{ 
+                background: 'linear-gradient(135deg, #7C9CF5, #A5B8FF)', 
+                color: '#fff', 
+                textDecoration: 'none', 
+                padding: '13px 32px', 
+                borderRadius: 13, 
+                fontWeight: 700, 
+                fontSize: 15, 
+                boxShadow: '0 4px 15px rgba(124, 156, 245, 0.3)',
+                transition: 'all 0.2s'
+              }}
+                onMouseEnter={e => { e.target.style.opacity = '0.9'; e.target.style.transform = 'translateY(-1px)' }}
+                onMouseLeave={e => { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)' }}>
                 Create Free Account →
               </Link>
-              <Link to="/login" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', padding: '13px 32px', borderRadius: 13, fontWeight: 600, fontSize: 15 }}>
+              <Link to="/login" style={{ 
+                background: '#FFFFFF', 
+                border: '1px solid var(--border-color, #E2E8F0)', 
+                color: 'var(--text-primary, #1E293B)', 
+                textDecoration: 'none', 
+                padding: '13px 32px', 
+                borderRadius: 13, 
+                fontWeight: 600, 
+                fontSize: 15,
+                transition: 'all 0.2s',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
+              }}
+                onMouseEnter={e => { e.target.style.background = 'rgba(109,142,247,0.06)'; e.target.style.borderColor = '#7C9CF5' }}
+                onMouseLeave={e => { e.target.style.background = '#FFFFFF'; e.target.style.borderColor = 'var(--border-color, #E2E8F0)' }}>
                 Sign In
               </Link>
             </div>
@@ -332,10 +468,11 @@ const CourseList = () => {
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap');
         @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
         * { box-sizing: border-box; }
-        input::placeholder { color: rgba(255,255,255,0.25); }
+        input::placeholder { color: var(--text-secondary, #64748B); opacity: 0.6; }
         ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #07070f; }
-        ::-webkit-scrollbar-thumb { background: #6c47ff; border-radius: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color, #F7F9FC); }
+        ::-webkit-scrollbar-thumb { background: #A5B8FF; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7C9CF5; }
       `}</style>
     </div>
   )
